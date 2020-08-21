@@ -17,6 +17,8 @@ export class PainelComponent implements OnInit {
   public rodadaFrase: Frase;
   public progresso: number = 0;
 
+  public numTentativas: number = 3;
+
   constructor() {
     this.atualizaRodada();
   }
@@ -31,6 +33,8 @@ export class PainelComponent implements OnInit {
   }
 
   public verificarResposta() {
+    console.log(this.numTentativas);
+
     if (this.rodadaFrase.frasePtBr == this.resposta) {
       alert("Tradução correta")
 
@@ -40,8 +44,15 @@ export class PainelComponent implements OnInit {
       this.atualizaRodada();
 
     } else {
-      alert("Tradução Errada")
+      //diminuir o valor das tentativas
+      this.numTentativas--;
+      if (this.numTentativas < 0) {
+        alert("Você perdeu todas as tentativas!");
+        throw "Você perdeu todas as tentativas!";
+
+      }
     }
+    console.log(this.numTentativas);
   }
 
   private atualizaRodada() {
