@@ -27,13 +27,11 @@ export class PainelComponent implements OnInit {
 
   }
 
-  public atualizarResposta(resposta: Event): void {
-    console.log(resposta)
+  public atualizarResposta(resposta: Event): void { 
     this.resposta = (<HTMLInputElement>resposta.target).value;
   }
 
   public verificarResposta() {
-    console.log(this.numTentativas);
 
     if (this.rodadaFrase.frasePtBr == this.resposta) {
       alert("Tradução correta")
@@ -51,8 +49,7 @@ export class PainelComponent implements OnInit {
         throw "Você perdeu todas as tentativas!";
 
       }
-    }
-    console.log(this.numTentativas);
+    }    
   }
 
   private atualizaRodada() {
