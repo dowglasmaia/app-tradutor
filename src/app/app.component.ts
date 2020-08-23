@@ -6,5 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app-tradutor';
+
+  /**controlado pelo componente Painel */
+  public fimDeJogo(tipo: string) {
+    console.log(tipo)
+  }
+
 }
