@@ -1,5 +1,5 @@
 import { Coracao } from './../shared/coracao.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-tentativas',
@@ -8,13 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TentativasComponent implements OnInit {
 
-  public coracoes: Coracao[]= [
+   public coracoes: Coracao[]= [
     new Coracao(true), new Coracao(true), new Coracao(true)
   ]
-  constructor() { }
+
+  @Input() public tentativas: number;
+
+  constructor() {
+    //console.log("Tentativas recebidas do Painel: "+this.tentativas)
+   }
 
   ngOnInit(): void {
     console.log(this.coracoes)
+
+    console.log("Tentativas recebidas do Painel: "+this.tentativas)
   }
 
 }
