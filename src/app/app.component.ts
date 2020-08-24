@@ -8,7 +8,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
 
   public jogoEmAndamento: boolean = true;
-
+  public tipoEncerramento: string;
+  
   public messageFimDeJogo: string;
   public subMessageFimDeJogo: string;
   public urlImgFimDeJogo: string;
@@ -16,7 +17,8 @@ export class AppComponent {
 
   /**controlado pelo componente Painel */
   public fimDeJogo(tipo: string) {
-    this.jogoEmAndamento = false;    
+    this.jogoEmAndamento = false;
+    this.tipoEncerramento = tipo;
 
     if (tipo === 'derrota') {
       this.classTextMsg = 'danger';
