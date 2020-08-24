@@ -7,9 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  public jogoEmAndamento: boolean = true;
+
   /**controlado pelo componente Painel */
   public fimDeJogo(tipo: string) {
     console.log(tipo)
+    this.jogoEmAndamento = false;
   }
+
+
 
 }

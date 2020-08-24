@@ -1,4 +1,7 @@
 <app-topo></app-topo>
 
-<!-- objeto ou atributo da class PAINEL com o evento (fimDeJogo)  |  metado da class APP fimDeJogo($event)-->
-<app-painel (encerrarJogo)="fimDeJogo($event)"></app-painel>
+<div *ngIf="jogoEmAndamento">
+  <!-- objeto ou atributo da class PAINEL com o evento (fimDeJogo)  |  metado da class APP fimDeJogo($event)-->
+  <app-painel (encerrarJogo)="fimDeJogo($event)"></app-painel>
+
+</div>
