@@ -1,7 +1,22 @@
 <app-topo></app-topo>
 
-<div *ngIf="jogoEmAndamento">
+<div *ngIf="jogoEmAndamento; else fimDaJogada">
   <!-- objeto ou atributo da class PAINEL com o evento (fimDeJogo)  |  metado da class APP fimDeJogo($event)-->
   <app-painel (encerrarJogo)="fimDeJogo($event)"></app-painel>
 
 </div>
+
+
+<ng-template #fimDaJogada>
+  <div class="container text-center" style="margin-top: 80px;">
+    <div class="row">
+      <div class="col">
+        <h3 class="text-danger"> Fim de Jogo!!!</h3>
+        <h4 class="text-danger"> Você perdeu.</h4>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <img src="assets/img/minions_PNG61.png" class="img-fluid mx-auto d-block" alt="Você perdeu.">
+    </div>
+  </div>
+</ng-template>
