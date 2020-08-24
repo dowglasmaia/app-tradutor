@@ -46,7 +46,7 @@ export class PainelComponent implements OnInit, OnDestroy {
 
       //
       if (this.rodada == 4) {
-        this.encerrarJogo.emit(`Vitória`);
+        this.encerrarJogo.emit(`vitoria`);
       } else {
         this.atualizaRodada();
       }
@@ -55,7 +55,7 @@ export class PainelComponent implements OnInit, OnDestroy {
       //diminuir o valor das tentativas
       this.numTentativas--;
       if (this.numTentativas < 0) {
-        this.encerrarJogo.emit(`Derrota`);
+        this.encerrarJogo.emit(`derrota`);
       }
     }
   }
