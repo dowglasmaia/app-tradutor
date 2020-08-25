@@ -32,9 +32,11 @@ export class AppComponent {
       this.subMessageFimDeJogo = 'Parabens Você Ganhou.';
       this.urlImgFimDeJogo = 'assets/img/minions_PNG78.png';
     }
-
   }
 
+  public reinicarJogo(){
+   this.jogoEmAndamento = true;   
+  }
 
 
 }
